@@ -3,8 +3,8 @@
  */
 var config = {
     weixin : {
-        appID : 'wx3c1e9fdd84a88826',
-        appsecret : '73544f42698c7564deeff273e9ae0091'
+        appID : 'wx9a66afce31e4ec8b',
+        appsecret : 'c2b679dbd1ea6c0ffc99155123a25697'
     }
 }
 module.exports = config;
