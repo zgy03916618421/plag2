@@ -35,7 +35,7 @@ exports.getVirus = function *(userid) {
         var selectOrder = underscore.sample(order);
         console.log(selectOrder);
         var doc = selectOrder;
-        yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'virus':virusid,'infectid':userid});
+        yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'vid':virusid,'infectid':userid});
         yield mongodb.collection('order').updateOne({'orderid':doc.orderid},{$set:{'fullfill':doc.fullfill+1}});
         var virus = yield mongodb.collection('virus').find({'vid':virusid}).toArray();
         return virus[0];
