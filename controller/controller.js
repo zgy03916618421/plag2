@@ -35,7 +35,7 @@ exports.upPic = function *() {
             this.body = {"picurl":url};
         }catch (err){
             console.log(err.stack);
-            yield this.body = {'head':{code: 500,msg:'upload failed'}};
+            this.body = {'head':{code: 500,msg:'upload failed'}};
         }
 }
 exports.createVirus = function *() {
