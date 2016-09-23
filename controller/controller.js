@@ -32,10 +32,10 @@ exports.upPic = function *() {
                     var url = qiniuUtil.qiniuhost + name;
                 }
             }
-            this.body = {"picurl":url};
+            this.body = {"head":{code:200,msg:'success'},"data":url};
         }catch (err){
             console.log(err.stack);
-            this.body = {'head':{code: 500,msg:'upload failed'}};
+            this.body = {'head':{code: 500,msg:err.stack}};
         }
 }
 exports.createVirus = function *() {
@@ -53,7 +53,7 @@ exports.createVirus = function *() {
         "fullfill" : 0
     })
     mongodb.collection('infected').insertOne({"carryid":carryid,"vid":virus.vid,"infectid":carryid});
-    this.body = {'head':{code: 200,msg:'success'}};
+    this.body = {'head':{code: 300,msg:'success'}};
 }
 exports.fightVirus = function *() {
     var userid = this.params.userid;
