@@ -29,7 +29,7 @@ exports.getVirus = function *(userid) {
             }
         })
         var virusids = underscore.difference(Ovids,Uvids);
-        if(!virusids.length){
+        if(virusids.length){
             console.log(virusids)
             var virusid = underscore.sample(virusids);
             console.log(virusid);
