@@ -43,16 +43,16 @@ exports.createVirus = function *() {
     var carryid = virus.userid;
     virus.vid = md5(new Date().valueOf()+Math.random());
     virus.createtime = Date.parse(new Date());
-    yield mongodb.collection('virus').insertOne(virus);
+    mongodb.collection('virus').insertOne(virus);
     var orderid = md5(new Date().valueOf()+Math.random());
-    yield mongodb.collection('order').insertOne({
+    mongodb.collection('order').insertOne({
         "orderid":orderid,
         "userid" : carryid,
         "vid" : virus.vid,
         "createtime": Date.parse(new Date()),
         "fullfill" : 0
     })
-   yield mongodb.collection('infected').insertOne({"carryid":carryid,"vid":virus.vid,"infectid":carryid});
+    mongodb.collection('infected').insertOne({"carryid":carryid,"vid":virus.vid,"infectid":carryid});
     this.body = {'head':{code: 300,msg:'success'}};
 }
 exports.fightVirus = function *() {
