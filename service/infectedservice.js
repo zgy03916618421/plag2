@@ -30,23 +30,19 @@ exports.getVirus = function *(userid) {
         })
         var virusids = underscore.difference(Ovids,Uvids);
         if(virusids.length){
-            console.log(virusids)
             var virusid = underscore.sample(virusids);
-            console.log(virusid);
             var order = yield mongodb.collection('order').find({'vid':virusid}).toArray();
             var selectOrder = underscore.sample(order);
-            console.log(selectOrder);
             var doc = selectOrder;
             yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'vid':virusid,'infectid':userid});
             yield mongodb.collection('order').updateOne({'orderid':doc.orderid},{$set:{'fullfill':doc.fullfill+1}});
             var virus = yield mongodb.collection('virus').find({'vid':virusid}).toArray();
-            console.log(virus[0]);
-            console.log(virus[0].userid);
             var userinfo = yield mongodb.collection('user').find({'openid':virus[0].userid}).toArray();
-            console.log(userinfo);
+            var patientNumber = yield mongodb.collection('infected').find({'vid':virusid}).toArray().length;
             var data ={};
             data.virus = virus[0];
             data.userinfo = userinfo[0];
+            data.patientNumber = patientNumber;
             return {'head':{code:200,msg:'success'},'data':data};
 
         }else{
@@ -57,6 +53,7 @@ exports.getVirus = function *(userid) {
 }
 exports.favor = function *(userid,vid) {
     var doc = {};
+    doc.orderid = md5(new Date().valueOf()+Math.random());
     doc.ueserid = userid;
     doc.vid = vid;
     doc.fullfill = 0 ;
