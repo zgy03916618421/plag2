@@ -15,7 +15,7 @@ exports.getVirus = function *(userid) {
     var orders = yield mongodb.collection('order').find({"fullfill":{$lt:4}}).toArray();
     if (!orders.length){
         var data = {'head':{code: 1000,msg:'no virus'}};
-        return {}
+        return data
     }else{
         var user = yield  mongodb.collection('infected').find({"infectid":userid}).toArray();
         var Ovids = [];
