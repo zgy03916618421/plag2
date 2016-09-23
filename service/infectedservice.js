@@ -47,7 +47,7 @@ exports.getVirus = function *(userid) {
             var data ={};
             data.virus = virus[0];
             data.userinfo = userinfo[0];
-            return data
+            return {'head':{code:200,msg:'success'},'data':data};
 
         }else{
             return {'head':{code: 1000,msg:'no virus'}};

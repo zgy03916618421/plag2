@@ -58,7 +58,7 @@ exports.createVirus = function *() {
 exports.fightVirus = function *() {
     var userid = this.params.userid;
     var data = yield infectservice.getVirus(userid);
-    this.body = data;
+    this.body = data
 }
 exports.favor = function *() {
     var userid = this.request.body.userid;
