@@ -43,10 +43,10 @@
       <file leaf-file-name="infectedservice.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+            <state relative-caret-position="426">
+              <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
               <folding>
-                <element signature="e#2037#2105#0" expanded="false" />
+                <element signature="e#2114#2182#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -235,12 +235,12 @@
       <option name="presentableId" value="Default" />
       <updated>1474537561533</updated>
       <workItem from="1474537562765" duration="9610000" />
-      <workItem from="1474596760320" duration="9760000" />
+      <workItem from="1474596760320" duration="10141000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19370000" />
+    <option name="totallyTimeSpent" value="19751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="80" y="85" width="1920" height="1019" extended-state="0" />
@@ -295,7 +295,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2037#2105#0" expanded="false" />
+            <element signature="e#2114#2182#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -357,10 +357,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+        <state relative-caret-position="426">
+          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
           <folding>
-            <element signature="e#2037#2105#0" expanded="false" />
+            <element signature="e#2114#2182#0" expanded="false" />
           </folding>
         </state>
       </provider>

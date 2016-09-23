@@ -40,6 +40,8 @@ exports.getVirus = function *(userid) {
             yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'vid':virusid,'infectid':userid});
             yield mongodb.collection('order').updateOne({'orderid':doc.orderid},{$set:{'fullfill':doc.fullfill+1}});
             var virus = yield mongodb.collection('virus').find({'vid':virusid}).toArray();
+            console.log(virus[0]);
+            console.log(virus[0].userid);
             var userinfo = yield mongodb.collection('user').find({'openid':virus[0].userid}).toArray();
             console.log(userinfo);
             var data ={};
