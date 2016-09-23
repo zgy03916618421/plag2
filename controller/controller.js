@@ -58,7 +58,7 @@ exports.createVirus = function *() {
 exports.fightVirus = function *() {
     var userid = this.params.userid;
     var data = yield infectservice.getVirus(userid);
-    this.body = data
+    this.body = data;
 }
 exports.favor = function *() {
     var userid = this.request.body.userid;
@@ -72,11 +72,11 @@ exports.favor = function *() {
         "createtime": Date.parse(new Date()),
         "fullfill" : 0
     });
-    this.body = {'head':{code: 200,msg:'success'}};
+    this.body = {'head':{code: 300,msg:'success'}};
 }
 exports.disfavor = function *() {
     var userid = this.request.body.userid;
     var vid = this.request.body.vid;
     yield infectservice.disfavor(userid,vid);
-    this.body = {'head':{code: 200,msg:'success'}};
+    this.body = {'head':{code: 300,msg:'success'}};
 }
