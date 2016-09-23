@@ -14,7 +14,8 @@ var underscore = require('underscore');
 exports.getVirus = function *(userid) {
     var orders = yield mongodb.collection('order').find({"fullfill":{$lt:4}}).toArray();
     if (!orders.length){
-        return 'virus has end-all';
+        var data = {'head':{code: 1000,msg:'no virus'}};
+        return {}
     }else{
         var user = yield  mongodb.collection('infected').find({"infectid":userid}).toArray();
         var Ovids = [];
@@ -28,17 +29,27 @@ exports.getVirus = function *(userid) {
             }
         })
         var virusids = underscore.difference(Ovids,Uvids);
-        console.log(virusids)
-        var virusid = underscore.sample(virusids);
-        console.log(virusid);
-        var order = yield mongodb.collection('order').find({'vid':virusid}).toArray();
-        var selectOrder = underscore.sample(order);
-        console.log(selectOrder);
-        var doc = selectOrder;
-        yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'vid':virusid,'infectid':userid});
-        yield mongodb.collection('order').updateOne({'orderid':doc.orderid},{$set:{'fullfill':doc.fullfill+1}});
-        var virus = yield mongodb.collection('virus').find({'vid':virusid}).toArray();
-        return virus[0];
+        if(!virusids.length){
+            console.log(virusids)
+            var virusid = underscore.sample(virusids);
+            console.log(virusid);
+            var order = yield mongodb.collection('order').find({'vid':virusid}).toArray();
+            var selectOrder = underscore.sample(order);
+            console.log(selectOrder);
+            var doc = selectOrder;
+            yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'vid':virusid,'infectid':userid});
+            yield mongodb.collection('order').updateOne({'orderid':doc.orderid},{$set:{'fullfill':doc.fullfill+1}});
+            var virus = yield mongodb.collection('virus').find({'vid':virusid}).toArray();
+            var userinfo = yield mongodb.collection('user').find({'openid':virus[0].userid}).toArray();
+            var data ={};
+            data.virus = virus[0];
+            data.userinfo = userinfo[0];
+            return data
+
+        }else{
+            return {'head':{code: 1000,msg:'no virus'}};
+        }
+
     }
 }
 exports.favor = function *(userid,vid) {

@@ -15,22 +15,28 @@ exports.oauth = function *() {
     var accessToken = token.data.access_token;
     var openid = token.data.openid;
     var userinfo = yield client.getUser(openid);
+    userinfo.createtime = Date.parse(new Date());
     console.log(userinfo);
+    mongodb.collection('user').insertOne(userinfo);
     this.response.redirect(redircetUrl+'?userid='+userinfo.openid);
 
 }
 exports.upPic = function *() {
-        console.log(this);
-        var parts = parse(this,{limit:'5mb',autoFields: true});
-        var part;
-        while (part = yield parts){
-            if (part != undefined){
+        try{
+            var parts = parse(this,{limit:'5mb',autoFields: true});
+            var part;
+            while (part = yield parts){
+                if (part != undefined){
                     var name = md5(new Date().valueOf()+Math.random());
                     var rs = yield qiniuUtil.pipe(name,part);
                     var url = qiniuUtil.qiniuhost + name;
+                }
             }
+            this.body = {"picurl":url};
+        }catch (err){
+            console.log(err.stack);
+            yield this.body = {'head':{code: 500,msg:'upload failed'}};
         }
-        this.body = {"picurl":url};
 }
 exports.createVirus = function *() {
     var virus = this.request.body;
@@ -46,12 +52,13 @@ exports.createVirus = function *() {
         "createtime": Date.parse(new Date()),
         "fullfill" : 0
     })
-    this.body = 'fuck';
+    mongodb.collection('infected').insertOne({"carryid":carryid,"vid":virus.vid,"infectid":carryid});
+    this.body = {'head':{code: 200,msg:'success'}};
 }
 exports.fightVirus = function *() {
     var userid = this.params.userid;
     var data = yield infectservice.getVirus(userid);
-    this.body = {'data':data};
+    this.body = data;
 }
 exports.favor = function *() {
     var userid = this.request.body.userid;
@@ -65,11 +72,11 @@ exports.favor = function *() {
         "createtime": Date.parse(new Date()),
         "fullfill" : 0
     });
-    this.body = "I DON'T KONW SAY ANYTHING"
+    this.body = {'head':{code: 200,msg:'success'}};
 }
 exports.disfavor = function *() {
     var userid = this.request.body.userid;
     var vid = this.request.body.vid;
     yield infectservice.disfavor(userid,vid);
-    this.body =  "I DON'T KONW SAY ANYTHING"
+    this.body = {'head':{code: 200,msg:'success'}};
 }
