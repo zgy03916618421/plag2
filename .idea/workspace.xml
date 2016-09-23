@@ -26,11 +26,13 @@
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="60" column="20" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="20" />
+            <state relative-caret-position="361">
+              <caret line="54" column="75" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="75" />
               <folding>
-                <element signature="e#1441#2080#0" expanded="false" />
+                <element signature="e#305#791#0" expanded="false" />
+                <element signature="e#821#1405#0" expanded="false" />
                 <element signature="e#1765#1923#0" expanded="false" />
+                <element signature="e#2115#2230#0" expanded="false" />
                 <element signature="e#2260#2698#0" expanded="false" />
                 <element signature="e#2731#2912#0" expanded="false" />
               </folding>
@@ -41,8 +43,20 @@
       <file leaf-file-name="infectedservice.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
+            <state relative-caret-position="480">
+              <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+              <folding>
+                <element signature="e#2037#2105#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="router.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/router/router.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -163,6 +177,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="router" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plag2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plag2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -207,12 +235,12 @@
       <option name="presentableId" value="Default" />
       <updated>1474537561533</updated>
       <workItem from="1474537562765" duration="9610000" />
-      <workItem from="1474596760320" duration="7482000" />
+      <workItem from="1474596760320" duration="9760000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17092000" />
+    <option name="totallyTimeSpent" value="19370000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="80" y="85" width="1920" height="1019" extended-state="0" />
@@ -252,8 +280,10 @@
         <state relative-caret-position="171">
           <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
-            <element signature="e#1441#2080#0" expanded="false" />
+            <element signature="e#305#791#0" expanded="false" />
+            <element signature="e#821#1405#0" expanded="false" />
             <element signature="e#1765#1923#0" expanded="false" />
+            <element signature="e#2115#2230#0" expanded="false" />
             <element signature="e#2260#2698#0" expanded="false" />
             <element signature="e#2731#2912#0" expanded="false" />
           </folding>
@@ -264,7 +294,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#2037#2105#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -302,22 +334,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="60" column="20" selection-start-line="60" selection-start-column="16" selection-end-line="60" selection-end-column="20" />
+        <state relative-caret-position="361">
+          <caret line="54" column="75" selection-start-line="54" selection-start-column="70" selection-end-line="54" selection-end-column="75" />
           <folding>
-            <element signature="e#1441#2080#0" expanded="false" />
+            <element signature="e#305#791#0" expanded="false" />
+            <element signature="e#821#1405#0" expanded="false" />
             <element signature="e#1765#1923#0" expanded="false" />
+            <element signature="e#2115#2230#0" expanded="false" />
             <element signature="e#2260#2698#0" expanded="false" />
             <element signature="e#2731#2912#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/router/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="480">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <folding>
+            <element signature="e#2037#2105#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
