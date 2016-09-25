@@ -11,4 +11,6 @@ router.post('/virus',C.createVirus);
 router.get('/virus/:userid',C.fightVirus);
 router.put('/favor',C.favor);
 router.put('/disfavor',C.disfavor);
+router.post('/speed',C.speed);
+router.post('/recharge',C.recharge);
 module.exports = router

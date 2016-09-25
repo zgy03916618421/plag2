@@ -16,10 +16,12 @@ exports.oauth = function *() {
     var openid = token.data.openid;
     var userinfo = yield client.getUser(openid);
     userinfo.createtime = Date.parse(new Date());
-    console.log(userinfo);
-    mongodb.collection('user').insertOne(userinfo);
+    userinfo.balance = 500;
+    var user = yield mongodb.collection('user').find({"openid":userinfo.openid}).toArray();
+    if (!user.length){
+        mongodb.collection('user').insertOne(userinfo);
+    }
     this.response.redirect(redircetUrl+'?userid='+userinfo.openid);
-
 }
 exports.upPic = function *() {
         try{
@@ -39,20 +41,29 @@ exports.upPic = function *() {
         }
 }
 exports.createVirus = function *() {
-    var virus = this.request.body;
-    var carryid = virus.userid;
+    var bodyparse = this.request.body;
+    var virus = {};
+    virus.userid = bodyparse.userid;
+    virus.type = bodyparse.type;
+    if (virus.type == 'img'){
+        virus.url = bodyparse.url;
+    }
+    virus.content = bodyparse.content;
     virus.vid = md5(new Date().valueOf()+Math.random());
     virus.createtime = Date.parse(new Date());
     mongodb.collection('virus').insertOne(virus);
+    var speed = bodyparse.speed;
+    var carryid = bodyparse.userid;
     var orderid = md5(new Date().valueOf()+Math.random());
     mongodb.collection('order').insertOne({
         "orderid":orderid,
         "userid" : carryid,
         "vid" : virus.vid,
         "createtime": Date.parse(new Date()),
-        "fullfill" : 0
+        "fullfill" : 0,
+        "speed" :speed
     })
-    mongodb.collection('infected').insertOne({"carryid":carryid,"vid":virus.vid,"infectid":carryid});
+    mongodb.collection('infected').insertOne({"carryid":carryid,"vid":virus.vid,"infectid":carryid,"orderid":orderid});
     this.body = {'head':{code: 300,msg:'success'}};
 }
 exports.fightVirus = function *() {
@@ -63,15 +74,16 @@ exports.fightVirus = function *() {
 exports.favor = function *() {
     var userid = this.request.body.userid;
     var vid = this.request.body.vid;
-    var orderid = md5(new Date().valueOf()+Math.random());
-    yield infectservice.favor(userid,vid);
-    yield mongodb.collection('order').insertOne({
+    var speed = this.request.body.speed;
+    //var orderid = md5(new Date().valueOf()+Math.random());
+    yield infectservice.favor(userid,vid,speed);
+    /*yield mongodb.collection('order').insertOne({
         "orderid":orderid,
         "userid" : userid,
         "vid" :vid,
         "createtime": Date.parse(new Date()),
         "fullfill" : 0
-    });
+    });*/
     this.body = {'head':{code: 300,msg:'success'}};
 }
 exports.disfavor = function *() {
@@ -79,4 +91,16 @@ exports.disfavor = function *() {
     var vid = this.request.body.vid;
     yield infectservice.disfavor(userid,vid);
     this.body = {'head':{code: 300,msg:'success'}};
+}
+exports.speed = function *() {
+    var order = this.request.body.order;
+    var userid = this.request.body.userid
+    var data = yield infectservice.speed(order,userid);
+    this.body = data;
+}
+exports.recharge = function *() {
+    var money = this.request.body.money;
+    var userid = this.request.body.userid;
+    yield infectservice(money,userid);
+    this.body = {'head':{code: 300,msg:'success'}}
 }
