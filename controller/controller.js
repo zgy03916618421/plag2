@@ -104,3 +104,8 @@ exports.recharge = function *() {
     yield infectservice(money,userid);
     this.body = {'head':{code: 300,msg:'success'}}
 }
+exports.getUserInfo = function *() {
+    var userid = this.params.userid;
+    var userinfo = yield  mongodb.collection('user').find({'openid':userid}).toArray();
+    this.body = {'head':{code:200,msg:'success'},'data':userinfo[0]}
+}

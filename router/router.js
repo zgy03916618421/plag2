@@ -13,4 +13,5 @@ router.put('/favor',C.favor);
 router.put('/disfavor',C.disfavor);
 router.post('/speed',C.speed);
 router.post('/recharge',C.recharge);
+router.get('/getuser/:userid',C.getUserInfo)
 module.exports = router
