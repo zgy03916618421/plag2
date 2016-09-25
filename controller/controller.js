@@ -93,9 +93,9 @@ exports.disfavor = function *() {
     this.body = {'head':{code: 300,msg:'success'}};
 }
 exports.speed = function *() {
-    var order = this.request.body.order;
+    var vid = this.request.body.vid;
     var userid = this.request.body.userid
-    var data = yield infectservice.speed(order,userid);
+    var data = yield infectservice.speedv2(vid,userid);
     this.body = data;
 }
 exports.recharge = function *() {

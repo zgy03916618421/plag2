@@ -70,7 +70,7 @@ exports.favor = function *(userid,vid,speed) {
 exports.disfavor = function *(userid,vid) {
     yield mongodb.collection('action').insertOne({'userid':userid,'vid':vid,'action':'skip'});
 }
-exports.speed = function *(order,userid) {
+exports.speedV1 = function *(order,userid) {
     var user = yield mongodb.collection('user').find({'openid':userid}).toArray();
     if(user.balance < 100){
         return {'head':{code:600,msg:'no balance'}};
@@ -105,4 +105,37 @@ exports.speed = function *(order,userid) {
 }
 exports.recharge = function *(money,userid) {
     yield mongodb.collection('user').updateOne({'openid':userid},{$inc:{'balance':money*1000}});
+}
+exports.speedv2 = function *(vid,userid) {
+    var user = yield mongodb.collection('user').find({'openid':userid}).toArray();
+    if(user.balance < 100){
+        return {'head':{code:600,msg:'no balance'}};
+    }else{
+        yield mongodb.collection('user').updateOne({'openid':userid},{$inc:{'balance':-100}});
+        var path = [];
+        while (1){
+            var parentInfect = yield mongodb.collection('infected').find({'infectid':userid,'vid':vid}).toArray();
+            console.log(parentInfect);
+            var parentOrder = yield mongodb.collection('order').find({'userid':parentInfect[0].carryid}).toArray();
+            console.log(parentOrder);
+            if(parentOrder[0].speed == 16){
+                path.push(parentOrder[0].userid);
+            }
+            if(parentInfect[0].carryid == parentInfect[0].infectid){
+                path.push(parentOrder[0].userid);
+                break;
+            }
+            userid = parentInfect[0].carryid;
+        }
+        console.log(path);
+        if(path.length ==1){
+            yield mongodb.collection('user').updateOne({'openid':path[0]},{$inc:{'balance':50}});
+        }else{
+            yield mongodb.collection('user').updateOne({'openid':path[path.length-1]},{$inc:{'balance':50}})
+            for (var i =0;i<path.length-1;i++){
+                yield mongodb.updateOne({'openid':value},{$inc:{'balance':parseInt(50/(arr.length-1))}});
+            }
+        }
+        return {'head':{code: 300,msg:'success'}};
+    }
 }
