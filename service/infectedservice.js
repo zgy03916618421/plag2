@@ -15,7 +15,12 @@ var underscore = require('underscore');
 exports.getVirus = function *(userid) {
     var total = yield mongodb.collection('order').find().toArray();
     var orders = underscore.filter(total,function (data) {
-        return data.fullfill < data.speed;
+        if(data.speed){
+            return data.fullfill < 16;
+        }else{
+            return data.fullfill < 4;
+        }
+
     })
     if (!orders.length){
         var data = {'head':{code: 1000,msg:'no virus'}};
@@ -82,7 +87,7 @@ exports.speedV1 = function *(order,userid) {
             console.log(parentInfect);
             var parentOrder = yield mongodb.collection('order').find({'orderid':parentInfect[0].orderid}).toArray();
             console.log(parentOrder);
-            if(parentOrder[0].speed == 16){
+            if(parentOrder[0].speed == true){
                 path.push(parentOrder[0].userid);
             }
             if(parentInfect[0].carryid == parentInfect[0].infectid){
@@ -118,7 +123,7 @@ exports.speedv2 = function *(vid,userid) {
             console.log(parentInfect);
             var parentOrder = yield mongodb.collection('order').find({'userid':parentInfect[0].carryid}).toArray();
             console.log(parentOrder);
-            if(parentOrder[0].speed == 16){
+            if(parentOrder[0].speed == true){
                 path.push(parentOrder[0].userid);
             }
             if(parentInfect[0].carryid == parentInfect[0].infectid){
@@ -130,6 +135,7 @@ exports.speedv2 = function *(vid,userid) {
         console.log(path);
         if(path.length ==1){
             yield mongodb.collection('user').updateOne({'openid':path[0]},{$inc:{'balance':50}});
+            yield mongodb.colllection('extragold').insertOne({'gold':50,'userid':path[0]});
         }else{
             yield mongodb.collection('user').updateOne({'openid':path[path.length-1]},{$inc:{'balance':50}})
             for (var i =0;i<path.length-1;i++){

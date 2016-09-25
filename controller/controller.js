@@ -16,9 +16,10 @@ exports.oauth = function *() {
     var openid = token.data.openid;
     var userinfo = yield client.getUser(openid);
     userinfo.createtime = Date.parse(new Date());
-    userinfo.balance = 500;
+
     var user = yield mongodb.collection('user').find({"openid":userinfo.openid}).toArray();
     if (!user.length){
+        userinfo.balance = 500;
         mongodb.collection('user').insertOne(userinfo);
     }
     this.response.redirect(redircetUrl+'?userid='+userinfo.openid);
