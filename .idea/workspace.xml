@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93b9efac-7777-41a6-938f-f483b0881494" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/controller.js" afterPath="$PROJECT_DIR$/controller/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/infectedservice.js" afterPath="$PROJECT_DIR$/service/infectedservice.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.js" afterPath="$PROJECT_DIR$/test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/middleware/connectMongo.js" afterPath="$PROJECT_DIR$/middleware/connectMongo.js" />
     </list>
     <ignored path="plag2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,13 +26,13 @@
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
+            <state relative-caret-position="401">
               <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
               <folding>
                 <element signature="e#951#1559#0" expanded="false" />
-                <element signature="e#1595#2517#0" expanded="false" />
                 <element signature="e#2160#2342#0" expanded="false" />
                 <element signature="e#2552#2667#0" expanded="false" />
+                <element signature="e#3221#3402#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -60,7 +58,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connectMongo.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="connectMongo.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/middleware/connectMongo.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
@@ -90,13 +88,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infectedservice.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="infectedservice.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+            <state relative-caret-position="56">
+              <caret line="63" column="45" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
               <folding>
                 <element signature="e#428#2459#0" expanded="false" />
+                <element signature="e#2505#2872#0" expanded="false" />
                 <element signature="e#2915#3013#0" expanded="false" />
               </folding>
             </state>
@@ -143,12 +142,12 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/config/config.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/middleware/connectMongo.js" />
         <option value="$PROJECT_DIR$/config/qiniuconfig.js" />
         <option value="$PROJECT_DIR$/router/router.js" />
         <option value="$PROJECT_DIR$/controller/controller.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/service/infectedservice.js" />
+        <option value="$PROJECT_DIR$/middleware/connectMongo.js" />
       </list>
     </option>
   </component>
@@ -160,8 +159,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2123" />
-    <option name="y" value="172" />
+    <option name="x" value="2320" />
+    <option name="y" value="98" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -375,15 +374,15 @@
       <workItem from="1474632473755" duration="3780000" />
       <workItem from="1474683292112" duration="25029000" />
       <workItem from="1474761314791" duration="306000" />
-      <workItem from="1474765134391" duration="9247000" />
+      <workItem from="1474765134391" duration="10340000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74092000" />
+    <option name="totallyTimeSpent" value="75185000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2123" y="172" width="1440" height="780" extended-state="0" />
+    <frame x="2320" y="98" width="1440" height="780" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -418,7 +417,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -429,9 +428,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#951#1559#0" expanded="false" />
-            <element signature="e#1595#2517#0" expanded="false" />
             <element signature="e#2160#2342#0" expanded="false" />
             <element signature="e#2552#2667#0" expanded="false" />
+            <element signature="e#3221#3402#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -474,6 +473,7 @@
           <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
           <folding>
             <element signature="e#428#2459#0" expanded="false" />
+            <element signature="e#2505#2872#0" expanded="false" />
             <element signature="e#2915#3013#0" expanded="false" />
           </folding>
         </state>
@@ -503,9 +503,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#951#1559#0" expanded="false" />
-            <element signature="e#1595#2517#0" expanded="false" />
             <element signature="e#2160#2342#0" expanded="false" />
             <element signature="e#2552#2667#0" expanded="false" />
+            <element signature="e#3221#3402#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -548,6 +548,7 @@
           <caret line="78" column="22" selection-start-line="78" selection-start-column="22" selection-end-line="78" selection-end-column="22" />
           <folding>
             <element signature="e#428#2459#0" expanded="false" />
+            <element signature="e#2505#2872#0" expanded="false" />
             <element signature="e#2915#3013#0" expanded="false" />
           </folding>
         </state>
@@ -577,9 +578,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#951#1559#0" expanded="false" />
-            <element signature="e#1595#2517#0" expanded="false" />
             <element signature="e#2160#2342#0" expanded="false" />
             <element signature="e#2552#2667#0" expanded="false" />
+            <element signature="e#3221#3402#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -651,6 +652,7 @@
           <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="25" />
           <folding>
             <element signature="e#428#2459#0" expanded="false" />
+            <element signature="e#2505#2872#0" expanded="false" />
             <element signature="e#2915#3013#0" expanded="false" />
           </folding>
         </state>
@@ -662,9 +664,9 @@
           <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
           <folding>
             <element signature="e#951#1559#0" expanded="false" />
-            <element signature="e#1595#2517#0" expanded="false" />
             <element signature="e#2160#2342#0" expanded="false" />
             <element signature="e#2552#2667#0" expanded="false" />
+            <element signature="e#3221#3402#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -691,6 +693,7 @@
           <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
           <folding>
             <element signature="e#428#2459#0" expanded="false" />
+            <element signature="e#2505#2872#0" expanded="false" />
             <element signature="e#2915#3013#0" expanded="false" />
           </folding>
         </state>
@@ -747,9 +750,9 @@
           <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
           <folding>
             <element signature="e#951#1559#0" expanded="false" />
-            <element signature="e#1595#2517#0" expanded="false" />
             <element signature="e#2160#2342#0" expanded="false" />
             <element signature="e#2552#2667#0" expanded="false" />
+            <element signature="e#3221#3402#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -760,6 +763,7 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#428#2459#0" expanded="false" />
+            <element signature="e#2505#2872#0" expanded="false" />
             <element signature="e#2915#3013#0" expanded="false" />
           </folding>
         </state>
@@ -799,14 +803,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/connectMongo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -853,27 +849,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller.js">
+    <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
+        <state relative-caret-position="56">
+          <caret line="63" column="45" selection-start-line="63" selection-start-column="45" selection-end-line="63" selection-end-column="45" />
           <folding>
-            <element signature="e#951#1559#0" expanded="false" />
-            <element signature="e#1595#2517#0" expanded="false" />
-            <element signature="e#2160#2342#0" expanded="false" />
-            <element signature="e#2552#2667#0" expanded="false" />
+            <element signature="e#428#2459#0" expanded="false" />
+            <element signature="e#2505#2872#0" expanded="false" />
+            <element signature="e#2915#3013#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
+    <entry file="file://$PROJECT_DIR$/controller/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+        <state relative-caret-position="401">
+          <caret line="75" column="42" selection-start-line="75" selection-start-column="42" selection-end-line="75" selection-end-column="42" />
           <folding>
-            <element signature="e#428#2459#0" expanded="false" />
-            <element signature="e#2915#3013#0" expanded="false" />
+            <element signature="e#951#1559#0" expanded="false" />
+            <element signature="e#2160#2342#0" expanded="false" />
+            <element signature="e#2552#2667#0" expanded="false" />
+            <element signature="e#3221#3402#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/connectMongo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
