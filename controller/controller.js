@@ -101,7 +101,7 @@ exports.speed = function *() {
 exports.recharge = function *() {
     var money = this.request.body.money;
     var userid = this.request.body.userid;
-    yield infectservice(money,userid);
+    yield infectservice.recharge(money,userid);
     this.body = {'head':{code: 300,msg:'success'}}
 }
 exports.getUserInfo = function *() {

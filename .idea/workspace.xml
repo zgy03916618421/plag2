@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="93b9efac-7777-41a6-938f-f483b0881494" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller/controller.js" afterPath="$PROJECT_DIR$/controller/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/router/router.js" afterPath="$PROJECT_DIR$/router/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/infectedservice.js" afterPath="$PROJECT_DIR$/service/infectedservice.js" />
     </list>
     <ignored path="plag2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,8 +26,8 @@
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controller/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="488">
-              <caret line="109" column="68" selection-start-line="109" selection-start-column="68" selection-end-line="109" selection-end-column="68" />
+            <state relative-caret-position="380">
+              <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
               <folding>
                 <element signature="e#946#1554#0" expanded="false" />
                 <element signature="e#2155#2337#0" expanded="false" />
@@ -144,9 +142,9 @@
         <option value="$PROJECT_DIR$/middleware/connectMongo.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/config/qiniuconfig.js" />
-        <option value="$PROJECT_DIR$/controller/controller.js" />
         <option value="$PROJECT_DIR$/router/router.js" />
         <option value="$PROJECT_DIR$/service/infectedservice.js" />
+        <option value="$PROJECT_DIR$/controller/controller.js" />
       </list>
     </option>
   </component>
@@ -158,8 +156,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="77" />
-    <option name="y" value="190" />
+    <option name="x" value="254" />
+    <option name="y" value="109" />
     <option name="width" value="1440" />
     <option name="height" value="780" />
   </component>
@@ -283,7 +281,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="G:/wechatstatistic" />
+    <property name="last_opened_file_path" value="G:/bfr/plag" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js-jscs-nodeInterpreter" value="G:\node\node.exe" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
@@ -373,15 +371,15 @@
       <workItem from="1474632473755" duration="3780000" />
       <workItem from="1474683292112" duration="25029000" />
       <workItem from="1474761314791" duration="306000" />
-      <workItem from="1474765134391" duration="4070000" />
+      <workItem from="1474765134391" duration="6194000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68915000" />
+    <option name="totallyTimeSpent" value="71039000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="77" y="190" width="1440" height="780" extended-state="0" />
+    <frame x="254" y="109" width="1440" height="780" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -833,14 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/router/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-443">
@@ -852,10 +842,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/router/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="109" column="68" selection-start-line="109" selection-start-column="68" selection-end-line="109" selection-end-column="68" />
+        <state relative-caret-position="380">
+          <caret line="103" column="33" selection-start-line="103" selection-start-column="33" selection-end-line="103" selection-end-column="33" />
           <folding>
             <element signature="e#946#1554#0" expanded="false" />
             <element signature="e#2155#2337#0" expanded="false" />
