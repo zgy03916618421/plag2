@@ -64,7 +64,7 @@ exports.getVirus = function *(userid) {
 exports.favor = function *(userid,vid,speed) {
     var doc = {};
     doc.orderid = md5(new Date().valueOf()+Math.random());
-    doc.ueserid = userid;
+    doc.userid = userid;
     doc.vid = vid;
     doc.fullfill = 0 ;
     doc.speed = speed;
@@ -121,7 +121,7 @@ exports.speedv2 = function *(vid,userid) {
         while (1){
             var parentInfect = yield mongodb.collection('infected').find({'infectid':userid,'vid':vid}).toArray();
             console.log(parentInfect);
-            var parentOrder = yield mongodb.collection('order').find({'userid':parentInfect[0].carryid}).toArray();
+            var parentOrder = yield mongodb.collection('order').find({'userid':parentInfect[0].carryid,'vid':vid}).toArray();
             console.log(parentOrder);
             if(parentOrder[0].speed == true){
                 path.push(parentOrder[0].userid);
@@ -135,11 +135,11 @@ exports.speedv2 = function *(vid,userid) {
         console.log(path);
         if(path.length ==1){
             yield mongodb.collection('user').updateOne({'openid':path[0]},{$inc:{'balance':50}});
-            yield mongodb.colllection('extragold').insertOne({'gold':50,'userid':path[0]});
+            yield mongodb.collection('extragold').insertOne({'gold':50,'userid':path[0]});
         }else{
             yield mongodb.collection('user').updateOne({'openid':path[path.length-1]},{$inc:{'balance':50}})
             for (var i =0;i<path.length-1;i++){
-                yield mongodb.updateOne({'openid':value},{$inc:{'balance':parseInt(50/(arr.length-1))}});
+                yield mongodb.collection('user').updateOne({'openid':path[i]},{$inc:{'balance':parseInt(50/(path.length-1))}});
             }
         }
         return {'head':{code: 300,msg:'success'}};
