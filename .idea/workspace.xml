@@ -97,8 +97,8 @@
       <file leaf-file-name="infectedservice.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="786">
-              <caret line="137" column="72" selection-start-line="137" selection-start-column="72" selection-end-line="137" selection-end-column="72" />
+            <state relative-caret-position="292">
+              <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
               <folding>
                 <element signature="e#723#769#0" expanded="false" />
                 <element signature="e#820#925#0" expanded="false" />
@@ -383,12 +383,12 @@
       <workItem from="1474765134391" duration="20177000" />
       <workItem from="1474810045892" duration="658000" />
       <workItem from="1474856722697" duration="4378000" />
-      <workItem from="1474861730291" duration="11425000" />
+      <workItem from="1474861730291" duration="12069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101483000" />
+    <option name="totallyTimeSpent" value="102127000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
@@ -927,8 +927,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="786">
-          <caret line="137" column="72" selection-start-line="137" selection-start-column="72" selection-end-line="137" selection-end-column="72" />
+        <state relative-caret-position="292">
+          <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
           <folding>
             <element signature="e#723#769#0" expanded="false" />
             <element signature="e#820#925#0" expanded="false" />
