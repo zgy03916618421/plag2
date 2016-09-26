@@ -106,7 +106,7 @@ exports.recharge = function *(money,userid) {
 }
 exports.speedv2 = function *(vid,userid) {
     var user = yield mongodb.collection('user').find({'openid':userid}).toArray();
-    if(user.balance < 100){
+    if(user[0].balance < 100){
         return {'head':{code:600,msg:'no balance'}};
     }else{
         yield mongodb.collection('user').updateOne({'openid':userid},{$inc:{'balance':-100}});

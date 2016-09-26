@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93b9efac-7777-41a6-938f-f483b0881494" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/middleware/connectMongo.js" afterPath="$PROJECT_DIR$/middleware/connectMongo.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/infectedservice.js" afterPath="$PROJECT_DIR$/service/infectedservice.js" />
     </list>
     <ignored path="plag2.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -64,7 +64,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connectMongo.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="connectMongo.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middleware/connectMongo.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="209">
@@ -94,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="infectedservice.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="infectedservice.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-392">
-              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+            <state relative-caret-position="292">
+              <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
               <folding>
                 <element signature="e#723#769#0" expanded="false" />
                 <element signature="e#820#925#0" expanded="false" />
@@ -154,8 +154,8 @@
         <option value="$PROJECT_DIR$/router/router.js" />
         <option value="$PROJECT_DIR$/test.js" />
         <option value="$PROJECT_DIR$/controller/controller.js" />
-        <option value="$PROJECT_DIR$/service/infectedservice.js" />
         <option value="$PROJECT_DIR$/middleware/connectMongo.js" />
+        <option value="$PROJECT_DIR$/service/infectedservice.js" />
       </list>
     </option>
   </component>
@@ -383,12 +383,12 @@
       <workItem from="1474765134391" duration="20177000" />
       <workItem from="1474810045892" duration="658000" />
       <workItem from="1474856722697" duration="4378000" />
-      <workItem from="1474861730291" duration="10070000" />
+      <workItem from="1474861730291" duration="10727000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100128000" />
+    <option name="totallyTimeSpent" value="100785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1040" extended-state="0" />
@@ -898,20 +898,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-392">
-          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
-          <folding>
-            <element signature="e#723#769#0" expanded="false" />
-            <element signature="e#820#925#0" expanded="false" />
-            <element signature="e#2641#2739#0" expanded="false" />
-            <element signature="e#2783#4244#0" expanded="false" />
-            <element signature="e#4289#4509#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -936,6 +922,20 @@
         <state relative-caret-position="209">
           <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/infectedservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="108" column="13" selection-start-line="108" selection-start-column="13" selection-end-line="108" selection-end-column="13" />
+          <folding>
+            <element signature="e#723#769#0" expanded="false" />
+            <element signature="e#820#925#0" expanded="false" />
+            <element signature="e#2641#2739#0" expanded="false" />
+            <element signature="e#2783#4244#0" expanded="false" />
+            <element signature="e#4289#4509#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
