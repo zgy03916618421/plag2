@@ -3,15 +3,6 @@
  */
 var md5 = require('MD5');
 var underscore = require('underscore');
-/*exports.infect = function *(carryid,vid,infectid,orderid) {
-     mongodb.collection('infected').insertOne({
-        "carryid" :carryid,
-        "vid" :vid,
-        "infectid" :infectid,
-        "orderid" : orderid,
-        "createtime" : Date.parse(new Date())
-    })
-}*/
 exports.getVirus = function *(userid) {
     var total = yield mongodb.collection('order').find().toArray();
     var orders = underscore.filter(total,function (data) {
@@ -43,8 +34,9 @@ exports.getVirus = function *(userid) {
             var order = yield mongodb.collection('order').find({'vid':virusid}).toArray();
             var selectOrder = underscore.sample(order);
             var doc = selectOrder;
-            yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'vid':virusid,'infectid':userid,'orderid':doc.orderid});
             yield mongodb.collection('order').updateOne({'orderid':doc.orderid},{$set:{'fullfill':doc.fullfill+1}});
+            yield mongodb.collection('infected').insertOne({'carryid':doc.userid,'vid':virusid,'infectid':userid,'orderid':doc.orderid});
+
             var virus = yield mongodb.collection('virus').find({'vid':virusid}).toArray();
             var userinfo = yield mongodb.collection('user').find({'openid':virus[0].userid}).toArray();
             var patients = yield mongodb.collection('infected').find({'vid':virusid}).toArray();
@@ -110,6 +102,7 @@ exports.speedV1 = function *(order,userid) {
 }
 exports.recharge = function *(money,userid) {
     yield mongodb.collection('user').updateOne({'openid':userid},{$inc:{'balance':money*1000}});
+    yield mongodb.collection('deallog').insertOne({'userid':userid,'price':money,'createtime':Date.parse(new Date())});
 }
 exports.speedv2 = function *(vid,userid) {
     var user = yield mongodb.collection('user').find({'openid':userid}).toArray();
@@ -123,12 +116,12 @@ exports.speedv2 = function *(vid,userid) {
             console.log(parentInfect);
             var parentOrder = yield mongodb.collection('order').find({'userid':parentInfect[0].carryid,'vid':vid}).toArray();
             console.log(parentOrder);
-            if(parentOrder[0].speed == true){
-                path.push(parentOrder[0].userid);
-            }
             if(parentInfect[0].carryid == parentInfect[0].infectid){
                 path.push(parentOrder[0].userid);
                 break;
+            }
+            if(parentOrder[0].speed == true){
+                path.push(parentOrder[0].userid);
             }
             userid = parentInfect[0].carryid;
         }

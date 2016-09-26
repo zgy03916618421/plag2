@@ -15,11 +15,10 @@ exports.oauth = function *() {
     var accessToken = token.data.access_token;
     var openid = token.data.openid;
     var userinfo = yield client.getUser(openid);
-    userinfo.createtime = Date.parse(new Date());
-
     var user = yield mongodb.collection('user').find({"openid":userinfo.openid}).toArray();
     if (!user.length){
-        userinfo.balance = 500;
+        userinfo.createtime = Date.parse(new Date());
+        userinfo.balance = 200;
         mongodb.collection('user').insertOne(userinfo);
     }
     this.response.redirect(redircetUrl+'?userid='+userinfo.openid);
@@ -53,7 +52,7 @@ exports.createVirus = function *() {
     virus.vid = md5(new Date().valueOf()+Math.random());
     virus.createtime = Date.parse(new Date());
     mongodb.collection('virus').insertOne(virus);
-    var speed = bodyparse.speed;
+    //var speed = bodyparse.speed;
     var carryid = bodyparse.userid;
     var orderid = md5(new Date().valueOf()+Math.random());
     mongodb.collection('order').insertOne({
@@ -62,7 +61,7 @@ exports.createVirus = function *() {
         "vid" : virus.vid,
         "createtime": Date.parse(new Date()),
         "fullfill" : 0,
-        "speed" :speed
+        "speed" :false
     })
     mongodb.collection('infected').insertOne({"carryid":carryid,"vid":virus.vid,"infectid":carryid,"orderid":orderid});
     this.body = {'head':{code: 300,msg:'success'}};
